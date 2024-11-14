@@ -241,7 +241,7 @@ if __name__ == "__main__":
         slice_num = int(tol_samp_num / slice_samp_num)  # total number of slices
         csi_path = PathRaw + '/' + Prefix + 'InputData' + na + '.txt'
         H = []
-        for slice_idx in range(2): # range(slice_num): # Read in channel data in a loop. In each loop, only one slice of channel is read in
+        for slice_idx in range(slice_num): # Read in channel data in a loop. In each loop, only one slice of channel is read in
             print('Loading input CSI data of slice ' + str(slice_idx))
             slice_lines = read_slice_of_file(csi_path, slice_idx * slice_samp_num, (slice_idx + 1) * slice_samp_num)
             Htmp = np.loadtxt(slice_lines)
